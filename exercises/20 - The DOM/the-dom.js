@@ -33,3 +33,16 @@ function toggleRound() {
 }
 
 pic.addEventListener('click', toggleRound);
+
+pic.alt = 'Cute Pup'; // setter
+console.log(pic.alt); // getter
+console.log(pic.naturalWidth); // getter
+
+pic.width = 200;
+
+pic.addEventListener('load', function() {
+	console.log(pic.naturalWidth); // getter
+});
+
+pic.setAttribute('wes-is-cool', 'REALLY CUTE PUP');
+console.log(pic.getAttribute('alt'));
