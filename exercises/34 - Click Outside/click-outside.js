@@ -24,6 +24,10 @@ function handleCardButtonClick() {
 	modalOuter.classList.add('open');
 }
 
+cardButtons.forEach((button) =>
+	button.addEventListener('click', handleCardButtonClick)
+);
+
 function closeModal() {
 	modalOuter.classList.remove('open');
 }
@@ -35,6 +39,9 @@ modalOuter.addEventListener('click', function(event) {
 	}
 });
 
-cardButtons.forEach((button) =>
-	button.addEventListener('click', handleCardButtonClick)
-);
+window.addEventListener('keydown', (event) => {
+	// console.log(event);
+	if (event.key === 'Escape') {
+		closeModal();
+	}
+});
