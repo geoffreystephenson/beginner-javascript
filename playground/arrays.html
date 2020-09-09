@@ -12,6 +12,42 @@
 
 <body>
 
+<script>
+const names = ['wes', 'kait', 'snickers'];
+
+console.log(names[0]);
+console.log(names.length);
+console.log(names[names.length - 1]);
+
+names.push('lux');
+console.log(names);
+const names2 = [...names, 'lux'];
+names.unshift('poppy');
+console.log(names);
+const names3 = ['poppy', ...names];
+console.log(names3);
+
+// Mutation methods
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// console.log(numbers);
+// numbers.splice(3, 2);
+// console.log(numbers);
+
+// // Mutation Methods - DO CHANGE THE ORIGINAL DATA
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// // anytime you want to use a mutation method and NOT mutate the orignal array
+// // we need to take a copy of the array
+// const numbersReversed = [...numbers].reverse();
+// console.log(numbersReversed);
+// // numbers.reverse();
+// console.log(numbers);
+// // Immutable - THEY DO NOT CHANGE THE ORIGINAL DATA
+// const pizzaSlice = numbers.slice(2, 4);
+// console.log(pizzaSlice);
+// console.log(numbers);
+
+</script>
 </body>
 
 </html>
