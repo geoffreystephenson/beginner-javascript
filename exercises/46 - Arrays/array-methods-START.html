@@ -48,9 +48,30 @@
 
     // Make a function that creates a range from x to y with Array.from();
 
+     function createRange(start, end) {
+      const range = Array.from({ length: end - start + 1 }, function (item, index) {
+        return index + start;
+      });
+      return range;
+    }
+
+    const myRange = createRange(3, 7);
+
     // Check if the last array you created is really an array with Array.isArray();
+   console.log(Array.isArray(myRange));
 
     // Take the meats object and make three arrays with Object.entries(), Object.keys, Object.values()
+
+    console.log(Object.entries(meats));
+    console.log(Object.keys(meats));
+    console.log(Object.values(meats));
+
+     Object.entries(meats).forEach(([meat, qty]) => {
+      // const key = entry[0];
+      // const value = entry[1];
+      // const [key, value] = entry;
+      console.log(meat, qty);
+    });
 
     /*
       Instance Methods
