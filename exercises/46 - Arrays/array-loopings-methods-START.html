@@ -129,6 +129,92 @@
       Looping Methods
     */
 
+    function logTopping(topping, index, originalArray) {
+        // console.log(topping, index, array);
+        const nextTopping = originalArray[index + 1];
+        const prevTopping = originalArray[index - 1];
+        // log the topping
+        console.log(topping);
+        // log the prev topping if there is one
+        prevTopping ? console.log(prevTopping) : null;
+
+        // log the next topping if there is one
+        nextTopping ? console.log(nextTopping) : null;
+        // if its the last item in the array, say good bye
+        index === originalArray.length - 1
+            ? console.log('Goodbye')
+            : console.log('Getting the next Topping');
+
+        // index === originalArray.length && console.log('Goodbye');
+        console.log('-------🍕-------');
+    };
+
+    // toppings.forEach(topping => logTopping(topping));
+    toppings.forEach(logTopping);
+
+    toppings.forEach(topping => {
+       // console.log(topping);
+    })
+
+    // Map, Filter, Reduce
+    console.clear();
+
+    function addArms(face) {
+        return `👋 ${face} 👋`;
+    }
+
+    const toys = faces.map(addArms);
+
+    console.log(toys);
+
+    function bosify(name) {
+      return `${name} Bos`;
+    }
+
+    function capitalize(word) {
+      return `${word[0].toUpperCase()}${word.slice(1)}`;
+    }
+
+    const fullNames = ['wes', 'kait', 'poppy']
+      .map(capitalize)
+      .map(bosify);
+    console.log(fullNames);
+
+    const orderTotalsWithTax = orderTotals.map(total => total * 1.13);
+    console.log(orderTotalsWithTax);
+
+//     function attachBody(face, body) {
+//         return `
+//           ${face}
+// 　　　　　${body.repeat(3)}
+// 　　　　 ${Array(3).fill(body).join(' ')}
+// 　　　👇🏽　 ${body.repeat(2)}　👇🏽
+//         ${Array(2).fill(body).join('   ')}
+//         ${Array(2).fill(body).join('   ')}
+// 　　　　　👢　　👢
+//         `
+//     }
+
+//     faces.map(face => attachBody(face, '🍟')).forEach(body => console.log(body))
+console.clear();
+
+    const cleanPeople = people.map(function (person) {
+      // timestamp
+      const birthday = new Date(person.birthday).getTime();
+      // now timestamp
+      const now = Date.now();
+      const age = Math.floor((now - birthday) / 31536000000);
+      // get their birthday
+      // figure out how old they are
+      // return their full name and bday in an object
+      return {
+        age,
+        name: `${person.names.first} ${person.names.last}`,
+      }
+    });
+
+    console.table(cleanPeople)
+
   </script>
 </body>
 
