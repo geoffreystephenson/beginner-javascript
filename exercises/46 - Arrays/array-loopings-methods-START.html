@@ -213,7 +213,42 @@ console.clear();
       }
     });
 
-    console.table(cleanPeople)
+    console.table(cleanPeople);
+
+    console.clear();
+
+    // const over40 = cleanPeople.filter(function(person) {
+    //     console.log(person);
+    //     if (person.age > 40) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // });
+
+    const over40 = cleanPeople.filter(person => person.age > 40);
+
+    console.table(over40);
+
+    console.clear();
+
+    function findById(id) {
+      return function isStudent(student) {
+        return student.id === id;
+      }
+    }
+
+    function findByProp(prop, propWeAreLookingFor) {
+      return function isStudent(student) {
+        return student[prop] === propWeAreLookingFor;
+      }
+    }
+
+    const student = students.find(findByProp('id', '565a'));
+    const student2 = students.find(findByProp('first_name', 'Micki'));
+    console.log(student);
+    console.log(student2);
+
 
   </script>
 </body>
