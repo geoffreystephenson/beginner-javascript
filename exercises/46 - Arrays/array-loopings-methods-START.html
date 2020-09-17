@@ -249,6 +249,34 @@ console.clear();
     console.log(student);
     console.log(student2);
 
+    console.clear();
+
+    // Reduce!
+
+    function tallyNumbers(tally, currentTotal) {
+        // console.log(`The current tally is ${tally}`);
+        // console.log(`The current total is ${currentTotal}`);
+        // console.log('--------');
+        return tally + currentTotal;
+    }
+
+    const allOrders = orderTotals.reduce(tallyNumbers, 0);
+
+    console.log(allOrders);
+
+    function inventoryReducer(totals, item) {
+        console.log(`Looping over ${item.type}`);
+        // increment type by 1
+        totals[item.type] = totals[item.type] + 1 || 1;
+        // return the totals
+        return totals;
+    }
+
+    const inventoryCounts = inventory.reduce(inventoryReducer, {});
+    console.log(inventoryCounts);
+
+    const totalInventoryPrice = inventory.reduce((acc, item) => acc + item.price, 0);
+    console.log(totalInventoryPrice);
 
   </script>
 </body>
