@@ -10,7 +10,17 @@
 
 <body>
   <script>
+    // console.log('it works!');
 
+    function makePizza(toppings) {
+        const pizzaPromise = new Promise(function(resolve, reject) {
+            resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
+        });
+        return pizzaPromise;
+    }
+
+    const pizza = makePizza(['pepperoni', 'mushrooms']);
+    console.log(pizza);
   </script>
 </body>
 
